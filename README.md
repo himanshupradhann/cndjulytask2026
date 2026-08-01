@@ -1,54 +1,93 @@
 # cndjulytask2026
 
-file structure
+## File Structure
 
-Data
-  testdata.txt
-  
-output
-  graph.png
+```text
+data/
+    testdata.txt
 
-src
-  analyser.py
-  cleaner.py
-  export.py
-  parser.py
-  server.py
-  visua;isation.py
+output/
+    graph.png
 
-web
-  index.html
-  style.css
-  script.js
-  data
-    cleandata.csv
-  components
-    chart.js
-    animationEngine.js
-    csv_extractor.js
+src/
+    analyser.py
+    cleaner.py
+    export.py
+    parser.py
+    server.py
+    visualisation.py
+
+web/
+    index.html
+    style.css
+    script.js
+
+    data/
+        cleandata.csv
+
+    components/
+        chart.js
+        animationEngine.js
+        csv_extractor.js
 
 app.py
+```
 
+## Pipeline
 
-pipeline
+```text
+Raw Data
+    ↓
+parser.py
+    ↓
+cleaner.py
+    ↓
+analyser.py
+    ↓
+export.py
+    ↓
+CSV saved in web/data/cleandata.csv
+    ↓
+visualisation.py
+    ↓
+Graphs saved in output/
 
-  raw data -> parser.py -> cleaner.py -> analyser.py -> expoter.py -> CSV data saved in web/data -> visualisation.py -> graphs saved in /output 
-  server.js -> starts the server at http://localhost:8000 -> web/data/clean_data.csv -> csv_extractor.js -> (chart.js , animationEngine.js)
+server.py
+    ↓
+Starts server at http://localhost:8000
+    ↓
+Reads web/data/cleandata.csv
+    ↓
+csv_extractor.js
+    ↓
+chart.js + animationEngine.js
+```
 
+## How to Use
 
-  how to use :
+Clone the repository
 
-  commands:
+```bash
+git clone https://github.com/himanshupradhann/cndjulytask2026.git
+```
+```bash
+cd cndjulytask2026
+```
 
-  git clone https://github.com/himanshupradhann/cndjulytask2026
-  python app.py
+Run the project
 
-  Dependency:
-  python
-  telemetry data
+```bash
+python app.py
+```
 
-  Note:
-  -Make sure add the telemetry data in the \data directory
-  -Change the file path inside app.py
+## Dependencies
 
-  
+* Python
+* Telemetry Data
+
+## Note
+
+* Add the telemetry data file inside the `data/` directory.
+* Change the telemetry data file path inside `app.py` if required.
+* Generated CSV will be saved in `web/data/`.
+* Generated graphs will be saved in `output/`.
