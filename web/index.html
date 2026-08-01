@@ -1,0 +1,29 @@
+<html>
+
+<head>
+<title>Parikrama navigation</title>
+<link rel="stylesheet" href="style.css"></link>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Parikrama Mission Dashboard</h1>
+  </header>
+
+    <div class="dashboard">
+      <h1>Altitude vs Temprature</h1>
+      <canvas id="tempChart"></canvas>
+    </div>
+    <div class="dashboard">
+      <h1>Altitude vs Pressure</h1>
+      <canvas id="pressureChart"></canvas>
+    </div>
+
+  <script src="components/animationEngine.js"></script>
+  <script src="components/charts.js"></script>
+  <script src="components/CSV_extractor.js"></script>
+  <script src="script.js"></script>
+</body>
+
