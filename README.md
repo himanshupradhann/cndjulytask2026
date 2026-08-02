@@ -65,6 +65,11 @@ chart.js + animationEngine.js
 
 ## How to Use
 
+Download the DataSet
+~~~
+https://www.ncei.noaa.gov/pub/data/igra/data/data-por/
+~~~
+
 Clone the repository
 
 ```bash
@@ -73,6 +78,8 @@ git clone https://github.com/himanshupradhann/cndjulytask2026.git
 ```bash
 cd cndjulytask2026
 ```
+IMP:
+place the dataset in the data folder and change the file path in app.py
 
 Run the project
 
