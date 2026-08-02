@@ -31,7 +31,7 @@ def parse_data(file_path):
 
                 records.append([pressure,altitude,temprature,humidity])
 
-            except:
+            except :
                 continue
 
     df=pd.DataFrame(records,columns=["pressure","altitude", "temperature","humidity"])
