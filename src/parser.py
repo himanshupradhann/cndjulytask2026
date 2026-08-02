@@ -31,8 +31,8 @@ def parse_data(file_path):
 
                 records.append([pressure,altitude,temprature,humidity])
 
-            except FileNotFoundError:
-                print("File Not Found")
+            except :
+                continue
 
     df=pd.DataFrame(records,columns=["pressure","altitude", "temperature","humidity"])
     return df
