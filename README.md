@@ -3,51 +3,36 @@
 ## File Structure
 
 ```text
-                 ┌──────────────────┐
-                 │ Raw Telemetry TXT│
-                 └────────┬─────────┘
-                          │
-                          ▼
-                 ┌──────────────────┐
-                 │    parser.py     │
-                 │ Parse TXT fields │
-                 └────────┬─────────┘
-                          │
-                          ▼
-                 ┌──────────────────┐
-                 │   cleaner.py     │
-                 │ Missing values   │
-                 │ Unit conversion  │
-                 │ Sort by altitude │
-                 └────────┬─────────┘
-                          │
-                          ▼
-                 ┌──────────────────┐
-                 │   analyser.py    │
-                 │ Statistics       │
-                 └────────┬─────────┘
-                          │
-              ┌───────────┴───────────┐
-              ▼                       ▼
-     ┌────────────────┐      ┌────────────────┐
-     │   export.py    │      │visualisation.py│
-     │   CSV output   │      │ Static graphs  │
-     └───────┬────────┘      └────────────────┘
-             │
-             ▼
-     ┌────────────────┐
-     │ clean_data.csv │
-     └───────┬────────┘
-             │
-             ▼
-     ┌────────────────────┐
-     │   Web Dashboard    │
-     │ HTML/CSS/JavaScript │
-     └─────────┬──────────┘
-               │
-        ┌──────┴───────┐
-        ▼              ▼
-   Chart.js       Animation
+cndjulytask2026/
+│
+├── data/
+│   └── testdata.txt
+│
+├── output/
+│   └── graph.png
+│
+├── src/
+│   ├── parser.py
+│   ├── cleaner.py
+│   ├── analyser.py
+│   ├── export.py
+│   ├── visualisation.py
+│   └── server.py
+│
+├── web/
+│   ├── index.html
+│   ├── style.css
+│   ├── script.js
+│   │
+│   ├── data/
+│   │   └── clean_data.csv
+│   │
+│   └── components/
+│       ├── CSV_extractor.js
+│       ├── charts.js
+│       └── animationEngine.js
+│
+└── app.py
 ```
 
 ## Pipeline
