@@ -53,31 +53,51 @@
 ## Pipeline
 
 ```text
-Raw Data
-    ↓
-parser.py
-    ↓
-cleaner.py
-    ↓
-analyser.py
-    ↓
-export.py
-    ↓
-CSV saved in web/data/cleandata.csv
-    ↓
-visualisation.py
-    ↓
-Graphs saved in output/
-
-server.py
-    ↓
-Starts server at http://localhost:8000
-    ↓
-Reads web/data/cleandata.csv
-    ↓
-csv_extractor.js
-    ↓
-chart.js + animationEngine.js
+                 ┌──────────────────┐
+                 │ Raw Telemetry TXT│
+                 └────────┬─────────┘
+                          │
+                          ▼
+                 ┌──────────────────┐
+                 │    parser.py     │
+                 │ Parse TXT fields │
+                 └────────┬─────────┘
+                          │
+                          ▼
+                 ┌──────────────────┐
+                 │   cleaner.py     │
+                 │ Missing values   │
+                 │ Unit conversion  │
+                 │ Sort by altitude │
+                 └────────┬─────────┘
+                          │
+                          ▼
+                 ┌──────────────────┐
+                 │   analyser.py    │
+                 │ Statistics       │
+                 └────────┬─────────┘
+                          │
+              ┌───────────┴───────────┐
+              ▼                       ▼
+     ┌────────────────┐      ┌────────────────┐
+     │   export.py    │      │visualisation.py│
+     │   CSV output   │      │ Static graphs  │
+     └───────┬────────┘      └────────────────┘
+             │
+             ▼
+     ┌────────────────┐
+     │ clean_data.csv │
+     └───────┬────────┘
+             │
+             ▼
+     ┌────────────────────┐
+     │   Web Dashboard    │
+     │ HTML/CSS/JavaScript │
+     └─────────┬──────────┘
+               │
+        ┌──────┴───────┐
+        ▼              ▼
+   Chart.js       Animation
 ```
 
 ## How to Use
