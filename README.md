@@ -3,34 +3,51 @@
 ## File Structure
 
 ```text
-data/
-    testdata.txt
-
-output/
-    graph.png
-
-src/
-    analyser.py
-    cleaner.py
-    export.py
-    parser.py
-    server.py
-    visualisation.py
-
-web/
-    index.html
-    style.css
-    script.js
-
-    data/
-        cleandata.csv
-
-    components/
-        chart.js
-        animationEngine.js
-        csv_extractor.js
-
-app.py
+                 ┌──────────────────┐
+                 │ Raw Telemetry TXT│
+                 └────────┬─────────┘
+                          │
+                          ▼
+                 ┌──────────────────┐
+                 │    parser.py     │
+                 │ Parse TXT fields │
+                 └────────┬─────────┘
+                          │
+                          ▼
+                 ┌──────────────────┐
+                 │   cleaner.py     │
+                 │ Missing values   │
+                 │ Unit conversion  │
+                 │ Sort by altitude │
+                 └────────┬─────────┘
+                          │
+                          ▼
+                 ┌──────────────────┐
+                 │   analyser.py    │
+                 │ Statistics       │
+                 └────────┬─────────┘
+                          │
+              ┌───────────┴───────────┐
+              ▼                       ▼
+     ┌────────────────┐      ┌────────────────┐
+     │   export.py    │      │visualisation.py│
+     │   CSV output   │      │ Static graphs  │
+     └───────┬────────┘      └────────────────┘
+             │
+             ▼
+     ┌────────────────┐
+     │ clean_data.csv │
+     └───────┬────────┘
+             │
+             ▼
+     ┌────────────────────┐
+     │   Web Dashboard    │
+     │ HTML/CSS/JavaScript │
+     └─────────┬──────────┘
+               │
+        ┌──────┴───────┐
+        ▼              ▼
+   Chart.js       Animation
 ```
 
 ## Pipeline
