@@ -5,20 +5,20 @@ def plot_tempvsalt(df):
     plt.figure(figsize=(8,6))
 
     plt.plot(
-        df["temperature"],
         df["altitude"],
+        df["temperature"],
         color="red",
         linewidth=1.5
     )
 
     plt.title("Altitude vs Temperature")
 
-    plt.xlabel("Temperature (°C)")
-    plt.ylabel("Altitude (m)")
+    plt.xlabel("Altitude (m)")
+    plt.ylabel("Temperature (°C)")
 
     plt.grid(True)
 
-    plt.savefig("output/temp_vs_altitude.png")
+    plt.savefig("output/altitude_vs_temp.png")
 
 def plot_altvspress(df):
 
@@ -34,7 +34,7 @@ def plot_altvspress(df):
     plt.title("Altitude vs Pressure")
 
     plt.xlabel("Altitude (m)")
-    plt.ylabel("Pressure")
+    plt.ylabel("Pressure ")
 
     plt.grid(True)
 
